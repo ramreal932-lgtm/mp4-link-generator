@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MP4 Link Generator</title>
+</head>
+<body>
+    <h2>MP4 Link Generator</h2>
+    <input type="text" id="filename" placeholder="File ka naam (ex: movie.mp4)">
+    <button onclick="generate()">Generate Link</button>
+    <h3 id="result"></h3>
+
+    <script>
+        function generate() {
+            const username = "ramreal932-lgtm"; 
+            const repo = "mp4-link-generator";  
+            const filename = document.getElementById('filename').value;
+            
+            if(filename === "") {
+                alert("Please file ka naam daalein!");
+                return;
+            }
+
+            const url = `https://cdn.jsdelivr.net/gh/${username}/${repo}@main/${filename}`;
+            document.getElementById('result').innerHTML = `Direct Link: <br><a href="${url}" target="_blank">${url}</a>`;
+        }
+    </script>
+</body>
+</html>
